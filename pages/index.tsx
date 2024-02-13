@@ -1,9 +1,16 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "@/styles/Home.module.css";
-import { GradientBgCom } from "@/components/QuoteGenerator/QuoteGeneratorElement";
+
+// Components
+import {
+  FooterCon,
+  FooterLink,
+  GradientBgCom,
+} from "@/components/QuoteGenerator/QuoteGeneratorElement";
+import { useState } from "react";
 
 export default function Home() {
+  const [numberOfQuotes, setNumberOfQuotes] = useState<number | null>(0);
+
   return (
     <>
       <Head>
@@ -14,7 +21,20 @@ export default function Home() {
       </Head>
       {/* Background */}
       <GradientBgCom>
-        
+        <FooterCon>
+          <>
+            Quotes Generated: {numberOfQuotes}
+            <br />
+            Developed by{" "}
+            <FooterLink
+              href="https://github.com/RiyaBhandari-2811"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @Riya
+            </FooterLink>
+          </>
+        </FooterCon>
       </GradientBgCom>
     </>
   );
